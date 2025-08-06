@@ -1,0 +1,291 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mylene's Kitchen</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+        font-family: 'Quicksand', sans-serif;
+       }
+
+        h1, h2, h3 {
+        font-family: 'Pacifico', cursive;
+       }
+    }
+    .gallery-img {
+     width: 100%;
+     height: 350px; /* pwede mong dagdagan pa kung gusto mo mas malaki */
+     object-fit: cover;
+     border-radius: 8px;
+   }
+    .food-card {
+    text-align: center;
+   }
+
+    }
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      display: none;
+      z-index: 1000;
+    }
+    .popup img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #fff;
+    }
+    .success-msg {
+      background-color: #d1fae5;
+      color: #065f46;
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 16px;
+      display: none;
+    }
+    .floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ef4444;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 50px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 999;
+      transition: background 0.3s;
+    }
+    .floating-btn:hover {
+      background-color: #dc2626;
+    }
+    #scrollToTop {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      display: none;
+      background: #fbbf24;
+      color: #000;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+  <header class="bg-red-500 text-white sticky top-0 z-50 shadow">
+    <nav class="flex justify-between items-center px-6 py-4">
+      <h1 class="text-2xl font-bold">Mylene'Kitchen</h1>
+      <ul class="flex space-x-4 text-sm">
+        <li><a href="#menu" class="hover:underline">Menu</a></li>
+        <li><a href="#gallery" class="hover:Underline">Gallery</a></li>
+        <li><a href="#order" class="hover:underline">Order</a></li>
+        <li><a href="#reviews" class="hover:underline">Reviews</a></li>
+        <li><a href="#faq" class="hover:underline">FAQ</a></li>
+        <li><a href="#about" class="hover:underline">About</a></li>
+        <li><a href="#contact" class="hover:underline">Contact</a></li>
+      </ul>
+    </nav>
+  </header>  <section class="bg-yellow-100 text-center py-16 px-4">
+    <h2 class="text-3xl font-bold mb-4">Welcome to Mylene's Kitchen</h2>
+    <p class="text-lg mb-6">Delicious food trays, desserts & gourmet treats made with love. We deliver joy in every bite!</p>
+    <a href="#order" class="bg-red-500 text-white px-6 py-2 rounded hover:bg-red-600 transition">Order Now</a>
+  </section>  <section class="flex flex-col md:flex-row gap-6 px-6 py-10 bg-yellow-50">
+  <!-- LEFT: MENU -->
+  <div class="w-full md:w-1/2">
+    <h2 class="text-2xl font-bold mb-4">Menu</h2>
+    <ul class="space-y-2 text-lg">
+      <li>Spaghetti Party Tray - ₱850</li>
+      <li>Garlic Butter Shrimp - ₱750</li>
+      <li>Baked Sushi - ₱650</li>
+      <li>Chocolate Moist Cake - ₱550</li>
+      <li>Ube Leche Flan - ₱350</li>
+      <li>Chili Garlic Oil (Bottle) - ₱120</li>
+      <li>Ready-to-Cook Lumpia - ₱300</li>
+      <li>Virtual Cooking Class Pass - ₱499</li>
+      <li>Event Catering Package - <span class="text-blue-600">Message for Quote</span></li>
+    </ul>
+  </div>
+
+  <!-- RIGHT: WELCOME + BEST SELLERS -->
+  <div class="w-full md:w-1/2 bg-yellow-100 p-6 rounded shadow text-center">
+    <h2 class="text-3xl font-bold mb-4"></h2>
+    <p class="text-lg mb-4">
+     
+    </p>
+
+    <p class="text-md mb-6">
+      Whether you're celebrating a birthday, hosting a party, or just craving home-cooked goodness — Mylene's Kitchen has something special for you.
+    </p>
+
+    <div class="bg-white p-4 rounded shadow mb-6 text-left">
+      <h3 class="font-semibold text-lg mb-2 text-center">⭐ Best Sellers</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li>🍝 <strong>Spaghetti Party Tray</strong> – Rich, saucy, and perfect for sharing!</li>
+        <li>🦐 <strong>Garlic Butter Shrimp</strong> – Savory and garlicky goodness.</li>
+        <li>🍣 <strong>Baked Sushi</strong> – Creamy, cheesy, and bursting with flavor.</li>
+        <li>🍫 <strong>Chocolate Moist Cake</strong> – Super moist and melt-in-your-mouth.</li>
+        <li>🌶️ <strong>Chili Garlic Oil</strong> – A perfect spicy twist to your meals.</li>
+      </ul>
+    </div>
+
+    <a href="#order" class="bg-red-500 text-white inline-block px-6 py-2 rounded hover:bg-red-600 transition">
+    
+    </a>
+  </div>
+</section>
+<!-- Gallery Section -->
+  <section id="gallery" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Food Gallery</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <img src="C:\Users\TOSHIBA\OneDrive\Pictures\spaghetti.webp" class="rounded shadow-md hover:scale-105 transition" />
+        <img src="C:\Users\TOSHIBA\OneDrive\Pictures\garlic.webp" class="rounded shadow-md hover:scale-105 transition" />
+        <img src="C:\Users\TOSHIBA\OneDrive\Pictures\leche.webp"class="rounded shadow-md hover:scale-105 transition" />
+        <img src="C:\Users\TOSHIBA\OneDrive\Pictures\cake.webp" class="rounded shadow-md hover:scale-105 transition" />
+        <img src="C:\Users\TOSHIBA\OneDrive\Pictures\su.webp" class="rounded shadow-md hover:scale-105 transition" />
+        <img src="C:\Users\TOSHIBA\OneDrive\Pictures\chili.webp" class="rounded shadow-md hover:scale-105 transition" />
+      </div>
+    </div>"
+  </section>
+
+ 
+  </section>  <div id="imagePopup" class="popup" onclick="this.style.display='none'"><img id="popupImg" src="" alt="Popup"></div>  <section id="order" class="p-6 bg-yellow-50">
+    <h2 class="text-2xl font-semibold mb-4">Order Now</h2>
+    <form id="orderForm" class="space-y-4 max-w-md mx-auto">
+      <input type="text" id="name" placeholder="Name" class="w-full p-2 border rounded" required />
+      <input type="email" id="email" placeholder="Email" class="w-full p-2 border rounded" required />
+      <textarea id="orderDetails" placeholder="Your order..." class="w-full p-2 border rounded" rows="4" required></textarea>
+      <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Submit</button>
+      <div id="successMessage" class="success-msg">✅ Thank you! We received your order. We'll contact you shortly.</div>
+    </form>
+  </section>  <section id="reviews" class="p-6 bg-white">
+    <h2 class="text-2xl font-semibold mb-4">⭐ Customer Reviews</h2>
+    <div class="space-y-4" id="reviewContainer">
+      <div class="bg-gray-100 p-4 rounded shadow">
+        <p class="font-semibold">Angelica Cruz</p>
+        <p class="text-yellow-500">★★★★☆</p>
+        <p>Grabe naka ilang order ako dito, super sarap!!</p>
+   <div class="space-y-4" id="reviewContainer">
+     <div class="bg-gray-100 p-4 rounded shadow">
+        <p class="font-semibold">Mark Rivera</p>
+        <p class="text-yellow-500">★★★★☆</p>
+        <p>Masarap lahat lalo na yung chocolate cake. Konti lang late sa delivery.</p>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow">
+        <p class="font-semibold">Jennylyn T.</p>
+        <p class="text-yellow-500">★★★★★</p>
+        <p>Ang bilis ng response, at ang ulam ay parang luto ng nanay ko ❤️</p>
+      </div>
+        <p class="font-semibold">Marie Almerol.</p>
+        <p class="text-yellow-500">★★★★★</p>
+        <p>Super sarap ng baked sushi! Sulit ang bayad. Will order again 🥰</p>
+      </div>
+    </div><form id="reviewForm" class="mt-6 max-w-md mx-auto space-y-3">
+  <input type="text" id="reviewName" placeholder="Your Name" class="w-full p-2 border rounded" required>
+  <select id="" class="w-full p-2 border rounded" required>
+    <option value="">Select Rating</option>
+    <option value="5">★★★★★</option>
+    <option value="4">★★★★☆</option>
+    <option value="3">★★★☆☆</option>
+    <option value="2">★★☆☆☆</option>
+    <option value="1">★☆☆☆☆</option>
+  </select>
+  <textarea id="reviewText" placeholder="Your review..." class="w-full p-2 border rounded" required></textarea>
+  <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Submit Review</button>
+</form>
+
+  </section>  <section class="p-6 bg-gray-50">
+    <h2 class="text-2xl font-semibold mb-4">💬 Facebook Comments</h2>
+    <div class="fb-comments" data-href="https://example.com" data-width="100%" data-numposts="5"></div>
+  </section>  <section id="faq" class="p-6">
+    <h2 class="text-2xl font-semibold mb-4">FAQ</h2>
+    <details class="bg-gray-100 p-4 rounded mb-2">
+      <summary class="font-semibold">Do you deliver?</summary>
+      <p>Yes, within San Manuel. Delivery fee applies.</p>
+    </details>
+    <details class="bg-gray-100 p-4 rounded">
+      <summary class="font-semibold">Payment options?</summary>
+      <p>GCash, bank transfer, COD available.</p>
+    </details>
+    </section>
+
+  <section id="about" class="p-6 bg-gray-100">
+  <h2 class="text-2xl font-semibold mb-4">About Mylene</h2>
+  <p class="mb-2">
+    Mylene Kitchen started with a simple dream — to bring the warmth of home-cooked meals to every celebration. With a passion for delicious flavors and beautiful presentation, we offer a variety of food trays, gourmet sauces, baked desserts, and Filipino classics.
+  </p>
+  <p class="mb-2">
+    Whether you're hosting a birthday, corporate event, or just craving a homemade treat, we deliver with love and quality you can taste. We also offer virtual cooking classes so you can learn to make your own favorites!
+  </p>
+  <p>
+    Every dish we make is a product of love, care, and dedication — from our kitchen to your table.
+  </p>
+</section>
+
+    <section id="contact" class="p-6">
+    <h2 class="text-2xl font-semibold mb-4">Contact</h2>
+    <p>Email: <a href="mailto:mylene.kitchen@gmail.com" class="text-red-500">mylene.kitchen@gmail.com</a></p>
+    <p>Phone: <a href="tel:+639123456789" class="text-red-500">+63 912 345 6789</a></p>
+    <div class="mt-4 flex space-x-4">
+      <a href="https://facebook.com" class="text-blue-600 hover:underline">Facebook</a>
+      <a href="https://instagram.com" class="text-pink-600 hover:underline">Instagram</a>
+      <a href="https://m.me" class="text-blue-400 hover:underline">Messenger</a>
+    </div>
+  </section>  <footer class="bg-gray-800 text-white text-center p-4">
+    <p>&copy; 2025 Mylene Kitchen. All rights reserved.</p>
+  </footer><a href="#order" class="floating-btn">🛒 Order Now</a>
+
+  <div id="scrollToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">⬆</div>  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="Fb123"></script>  <script>
+    window.onscroll = function () {
+      const btn = document.getElementById("scrollToTop");
+      btn.style.display = (window.scrollY > 300) ? "block" : "none";
+    };
+
+    function openPopup(src) {
+      document.getElementById("popupImg").src = src;
+      document.getElementById("imagePopup").style.display = "flex";
+    }
+
+    const form = document.getElementById("orderForm");
+    const successMsg = document.getElementById("successMessage");
+    form?.addEventListener("submit", function (e) {
+      e.preventDefault();
+      form.reset();
+      successMsg.style.display = "block";
+      setTimeout(() => successMsg.style.display = "none", 5000);
+    });
+
+    document.getElementById("reviewForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("reviewName").value;
+      const rating = document.getElementById("reviewRating").value;
+      const text = document.getElementById("reviewText").value;
+      const stars = "★".repeat(rating) + "☆".repeat(5 - rating);
+
+      const reviewHTML = `
+        <div class='bg-gray-100 p-4 rounded shadow'>
+          <p class='font-semibold'>${name}</p>
+          <p class='text-yellow-500'>${stars}</p>
+          <p>${text}</p>
+        </div>`;
+
+      document.getElementById("reviewContainer").insertAdjacentHTML("beforeend", reviewHTML);
+      e.target.reset();
+    });
+  </script></body>
+</html>
+
+
+
+      

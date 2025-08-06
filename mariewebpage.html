@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Marie’s Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #a52a2a;
+      color: #333;
+    }
+    header {
+      background: #800080;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    header img {
+      width: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    nav {
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      padding: 8px 16px;
+      transition: all 0.3s;
+    }
+    nav a.active, nav a:hover {
+      background: #0000ff;
+      color: white;
+      border-radius: 5px;
+    }
+    section {
+      display: none;
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+      position: relative;
+    }
+    section.active {
+      display: block;
+    }
+    .decor-left, .decor-right {
+      position: absolute;
+      top: 0;
+      width: 40px;
+      height: 100%;
+      background: linear-gradient(to bottom, #808080, #ff0000);
+      z-index: 0;
+    }
+    .decor-left {
+      left: -60px;
+      border-radius: 0 15px 15px 0;
+    }
+    .decor-right {
+      right: -60px;
+      border-radius: 15px 0 0 15px;
+    }
+    #home, #gallery, #shop, #reviews, #contact, #cart {
+      background: linear-gradient(to bottom right, #ffc0cb, #ffc0cb);
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 153, 255, 0.2);
+    }
+    section h2 {
+      font-size: 2rem;
+      color: #ff0000;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    section p {
+      font-size: 1.1rem;
+      text-align: justify;
+      max-width: 1000px;
+      margin: auto;
+      line-height: 1.8;
+    }
+    .shop, .gallery-grid, .cart-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .product, .gallery-item, .cart-item {
+      background: #fff;
+      padding: 15px;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      width: 260px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+    .product:hover {
+      transform: translateY(-5px);
+    }
+    .product img, .gallery-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .price {
+      color: #007acc;
+      font-weight: bold;
+    }
+    .total {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #444;
+      margin-bottom: 30px;
+    }
+    .reviews {
+      margin-top: 20px;
+      padding: 20px;
+      background: #e6f2ff;
+      border-radius: 10px;
+    }
+    .review {
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+    .stars {
+      color: #ffcc00;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f1f1f1;
+      color: #666;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="C:\Users\TOSHIBA\OneDrive\Pictures\logo.webp" alt="Marie’s Logo" />
+    <h1>Marie’s Shop</h1>
+    <p>Handmade Goods & Creative Finds</p>
+  </header>
+  <nav>
+    <a href="#" onclick="showSection('home', this)" class="active">Home</a>
+    <a href="#" onclick="showSection('gallery', this)">Gallery</a>
+    <a href="#" onclick="showSection('shop', this)">Shop</a>
+    <a href="#" onclick="showSection('cart', this)">Cart</a>
+    <a href="#" onclick="showSection('reviews', this)">Customer Rating</a>
+    <a href="#" onclick="showSection('contact', this)">Email</a>
+  </nav>
+
+  <section id="home" class="active">
+  <div class="decor-left"></div>
+  <div class="decor-right"></div>
+  <h2>Welcome to Marie’s Handmade Shop</h2>
+  <p>Marie’s Shop is your destination for delightful handmade items, made with love and passion. From vibrant mugs to comfy t-shirts and sandals perfect for summer, our products are crafted to bring a smile to your face and warmth to your space.</p>
+  
+  <p>Based in the heart of Roxas, Marie’s Handmade Shop is more than just a store — it’s a celebration of creativity, dedication, and community. Every item in our shop is carefully designed and handcrafted by local artisans who put their hearts into every detail. We believe in supporting local talent and bringing their beautiful work into your homes.</p>
+
+  <p>Whether you’re looking for a thoughtful gift or something to brighten up your everyday life, you’ll find it here. Our collection includes handmade mugs that are perfect for your morning coffee, soft and stylish t-shirts for any occasion, and sandals that are both comfortable and fashionable for sunny days. We also offer curated gift bundles that are ideal for birthdays, holidays, or simply letting someone know you care.</p>
+
+  <p>Customization is at the heart of what we do. We understand that everyone is unique, which is why we offer personalized designs and made-to-order items. If you have a special request, our team is more than happy to bring your vision to life. We take pride in ensuring each piece reflects your style and personality.</p>
+
+  <p>At Marie’s Handmade Shop, we are driven by a simple mission: to bring you joy through artful, crafted goods that stand the test of time. Our values are rooted in sustainability, quality, and authenticity. We use eco-friendly materials wherever possible and strive to reduce waste in our packaging and production processes. When you shop with us, you are not only getting a beautiful product — you are making a positive impact.</p>
+
+  <p>Thank you for supporting our dream and being a part of our growing community. We are excited to continue creating and sharing handmade happiness with you. Visit often, discover something new, and let us help you celebrate life’s special moments — one handcrafted piece at a time.</p>
+</section>
+
+  <section id="gallery">
+  <div class="decor-left"></div>
+  <div class="decor-right"></div>
+  <h2>Gallery</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="C:\Users\TOSHIBA\OneDrive\Pictures\mug.webp" alt="Mug"></div>
+    <div class="gallery-item"><img src="C:\Users\TOSHIBA\OneDrive\Pictures\tshirt.webp" alt="T-Shirt"></div>
+    <div class="gallery-item"><img src="C:\Users\TOSHIBA\OneDrive\Pictures\sandals.webp" alt="Sandals"></div>
+    <div class="gallery-item"><img src="C:\Users\TOSHIBA\OneDrive\Pictures\giftbundle.jpg" alt="Gift Bundle"></div>
+    <div class="gallery-item"><img src="C:\Users\TOSHIBA\OneDrive\Pictures\totebag.webp" alt="Tote Bag"></div>
+    <div class="gallery-item"><img src="C:\Users\TOSHIBA\OneDrive\Pictures\notebook.webp" alt="Notebook"></div>
+    <div class="gallery-item"><img src="C:\Users\TOSHIBA\OneDrive\Pictures\wallart.webp" alt="Wall Art"></div>
+    <div class="gallery-item"><img src="C:\Users\TOSHIBA\OneDrive\Pictures\craftset.webp" alt="Craft Set"></div>
+    <div class="gallery-item"><img src="C:\Users\TOSHIBA\OneDrive\Pictures\fridgemagnets.webp" alt="Fridge Magnets"></div>
+    <div class="gallery-item"><img src="C:\Users\TOSHIBA\OneDrive\Pictures\Michigan-coaster-set.jpg" alt="Coaster Set"></div>
+    <div class="gallery-item"><img src="C:\Users\TOSHIBA\OneDrive\Pictures\candle.webp" alt="Candle"></div>
+    <div class="gallery-item"><img src="C:\Users\TOSHIBA\OneDrive\Pictures\keychain.webp" alt="Keychain"></div>
+  </div>
+</section>
+
+  <section id="shop">
+  <div class="decor-left"></div>
+  <div class="decor-right"></div>
+  <h2>Shop</h2>
+  <div class="total">Total: $<span id="totalAmount">0.00</span></div>
+
+  <div class="shop" id="productList">
+    <div class="product">
+      <img src="D:\Pictures\Handmade Mug.webp" alt="Handmade Mug">
+      <h3>Handmade Mug</h3>
+      <p>$40.00</p>
+      <button class="add-to-cart" data-price="8.00">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="D:\Pictures\Stylish T-Shirt.webp" alt="Stylish T-Shirt">
+      <h3>Stylish T-Shirt</h3>
+      <p>$32.00</p>
+      <button class="add-to-cart" data-price="12.00">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="D:\Pictures\Summer Sandals.webp" alt="Summer Sandals">
+      <h3>Summer Sandals</h3>
+      <p>$55.00</p>
+      <button class="add-to-cart" data-price="15.00">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="D:\Pictures\Gift Bundle.webp" alt="Gift Bundle">
+      <h3>Gift Bundle</h3>
+      <p>$90.00</p>
+      <button class="add-to-cart" data-price="20.00">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="D:\Pictures\Canvas Tote Bag.webp" alt="Canvas Tote Bag">
+      <h3>Canvas Tote Bag</h3>
+      <p>$100.00</p>
+      <button class="add-to-cart" data-price="10.00">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="D:\Pictures\Custom Notebook.webp" alt="Custom Notebook">
+      <h3>Custom Notebook</h3>
+      <p>$60.00</p>
+      <button class="add-to-cart" data-price="6.00">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="D:\Pictures\wallart.webp" alt="Wall Art Print">
+      <h3>Wall Art Print</h3>
+      <p>$98.00</p>
+      <button class="add-to-cart" data-price="9.00">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="D:\Pictures\DIY Craft Kit.webp" alt="DIY Craft Kit">
+      <h3>DIY Craft Kit</h3>
+      <p>$130.00</p>
+      <button class="add-to-cart" data-price="13.00">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="D:\Pictures\Friendly Straws.webp" alt="Eco Friendly Straws">
+      <h3>Eco-Friendly Straws</h3>
+      <p>$50.00</p>
+      <button class="add-to-cart" data-price="5.00">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="D:\Pictures\Fridge Magnets.webp" alt="Fridge Magnets">
+      <h3>Fridge Magnets</h3>
+      <p>$49.00</p>
+      <button class="add-to-cart" data-price="4.00">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="D:\Pictures\Resin coaster set.webp" alt="Resin Coaster Set">
+      <h3>Resin Coaster Set</h3>
+      <p>$110.00</p>
+      <button class="add-to-cart" data-price="11.00">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="D:\Pictures\Aromatherapy Candle.webp" alt="Aromatherapy Candle">
+      <h3>Aromatherapy Candle</h3>
+      <p>$94.50</p>
+      <button class="add-to-cart" data-price="9.50">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="D:\Pictures\Mini Scrapbook.webp" alt="Mini Scrapbook">
+      <h3>Mini Scrapbook</h3>
+      <p>$70.00</p>
+      <button class="add-to-cart" data-price="7.00">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="D:\Pictures\Decorative Pillowcase.webp" alt="Decorative Pillowcase">
+      <h3>Decorative Pillowcase</h3>
+      <p>$143.00</p>
+      <button class="add-to-cart" data-price="14.00">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="D:\Pictures\Leather Keychain.webp" alt="Leather Keychain">
+      <h3>Leather Keychain</h3>
+      <p>$67.50</p>
+      <button class="add-to-cart" data-price="6.50">Add to Cart</button>
+    </div>
+  </div>
+</section>
+
+  <section id="cart">
+    <div class="decor-left"></div>
+    <div class="decor-right"></div>
+    <h2>Cart</h2>
+    <div class="cart-items" id="cartItems"></div>
+    <p class="total">Total: $<span id="cartTotal">0.00</span></p>
+  </section>
+
+  <section id="reviews">
+  <div class="decor-left"></div>
+  <div class="decor-right"></div>
+  <h2>Customer Rating</h2>
+  <div class="reviews">
+    <div class="review">
+      <p><strong>Ana Cruz:</strong> "I love the sandals! Super comfy and stylish!" <span class="stars">★★★★★</span></p>
+    </div>
+    <div class="review">
+      <p><strong>Juan Dela Cruz:</strong> "Their mugs are perfect for gifts. Will buy again!" <span class="stars">★★★★☆</span></p>
+    </div>
+    <div class="review">
+      <p><strong>Maria Lopez:</strong> "T-shirts are so soft and the print quality is great!" <span class="stars">★★★★★</span></p>
+    </div>
+    <div class="review">
+      <p><strong>Luis Santos:</strong> "Fast delivery and excellent packaging. Highly recommend!" <span class="stars">★★★★★</span></p>
+    </div>
+    <div class="review">
+      <p><strong>Jenny Ramos:</strong> "The tote bags are strong and beautifully printed." <span class="stars">★★★★☆</span></p>
+    </div>
+    <div class="review">
+      <p><strong>Marco Reyes:</strong> "Affordable and good quality. Great service!" <span class="stars">★★★★★</span></p>
+    </div>
+    <div class="review">
+      <p><strong>Ella Navarro:</strong> "I ordered customized shirts and they came out amazing!" <span class="stars">★★★★★</span></p>
+    </div>
+    <div class="review">
+      <p><strong>Daniela Cruz:</strong> "Their accessories are unique and beautiful." <span class="stars">★★★★☆</span></p>
+    </div>
+    <div class="review">
+      <p><strong>Ricardo Bautista:</strong> "Great customer service and fast response." <span class="stars">★★★★★</span></p>
+    </div>
+    <div class="review">
+      <p><strong>Angela Torres:</strong> "Highly satisfied with my order. Will recommend to friends!" <span class="stars">★★★★★</span></p>
+    </div>
+  </div>
+</section>
+  
+  <section id="contact">
+  <div class="decor-left"></div>
+  <div class="decor-right"></div>
+  <h2>Contact Us</h2>
+  <p>We love hearing from our customers and community. Whether you have a question, custom request, or simply want to share your experience with our handmade products, we're here to listen and help. Marie’s Handmade Shop is built on meaningful connections and creative collaboration — so don’t hesitate to reach out.</p>
+
+  <p>If you're interested in placing a custom order, we are more than happy to assist. We specialize in personalized products, including mugs, t-shirts, sandals, and gift bundles that reflect your unique personality and vision. From adding a name or phrase to creating something entirely new, we’re ready to work with you step-by-step. Let us help you turn your ideas into something beautiful and tangible.</p>
+
+  <p>Have a question about sizing, shipping, or product availability? Need help choosing the perfect gift? We’ve got you covered. Just send us a message, and we’ll respond as soon as possible. Our goal is to make your shopping experience smooth, joyful, and worry-free. We value your time and trust, and we’re committed to providing exceptional service from start to finish.</p>
+
+  <p>We’re also open to feedback. If you’ve purchased from us before, we’d love to hear what you think! Your opinions help us grow, improve, and continue creating products that make people happy. Whether it’s a compliment, suggestion, or even a concern — your voice matters.</p>
+
+  <p>If you're a local resident in Roxas or nearby, we can also arrange meet-ups or local delivery for convenience. Let us know if you're part of an event, market, or collaboration opportunity — we're always excited to connect with other creative minds and support local causes.</p>
+
+  <p>You can contact us anytime via the email below. Please include your name and the details of your inquiry so we can better assist you. We usually respond within 24 to 48 hours, excluding weekends and holidays.</p>
+
+  <ul style="text-align:center; list-style: none; padding: 0; margin-top: 15px;">
+    <li>Email: <a href="mailto:marieshop@example.com">marieshop@example.com</a></li>
+  </ul>
+
+  <p>Thank you for choosing Marie’s Handmade Shop. We’re honored to be part of your journey and can’t wait to hear from you soon!</p>
+</section>
+
+  <footer>
+    <p>&copy; 2025 Marie’s Shop. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function showSection(id, el) {
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+
+    const cartItems = document.getElementById("cartItems");
+    let cartTotal = 0;
+    
+    function formatPrice(price) {
+      return price.toFixed(2);
+    }
+
+    function updateTotalDisplays() {
+      document.getElementById("totalAmount").textContent = formatPrice(cartTotal);
+      document.getElementById("cartTotal").textContent = formatPrice(cartTotal);
+    }
+
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+      button.addEventListener("click", () => {
+        const price = parseFloat(button.getAttribute("data-price"));
+        const name = button.parentElement.querySelector("h3").textContent;
+
+        const item = document.createElement("div");
+        item.className = "cart-item";
+        item.innerHTML = `<strong>${name}</strong> - $${formatPrice(price)}`;
+        cartItems.appendChild(item);
+
+        cartTotal += price;
+        updateTotalDisplays();
+      });
+    });
+  </script>
+</body>
+</html>
